@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Lojas LM | Marketplace</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Bootstrap -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+
+<style>
+:root{
+ --red:#e60014;
+ --gray:#f4f4f4;
+}
+
+html{ scroll-behavior:smooth; }
+
+body{
+ margin:0;
+ font-family:Arial, Helvetica, sans-serif;
+ background:var(--gray);
+}
+
+/* NAVBAR */
+.navbar{
+ background:var(--red);
+}
+.navbar-brand{
+ font-weight:bold;
+ font-size:1.6rem;
+}
+
+/* SEARCH */
+.search-bar{
+ max-width:600px;
+ width:100%;
+}
+
+/* SEÇÕES */
+.section, .section-alt{
+ padding:60px 0;
+}
+.section{
+ background:#fff;
+}
+.section-alt{
+ background:#fafafa;
+}
+
+/* BANNER */
+#carouselBanners {
+ width: 100%;
+ max-height: 500px;
+ overflow: hidden;
+ margin-top: 20px;
+}
+#carouselBanners .banner-img {
+ width: 100%;
+ height: 500px;
+ object-fit: cover;
+}
+#carouselBanners .carousel-control-prev-icon,
+#carouselBanners .carousel-control-next-icon {
+ background-color: #e60014;
+ border-radius: 50%;
+ padding: 16px;
+}
+
+/* CATEGORIAS */
+.categorias a{
+ text-decoration:none;
+ color:#333;
+ font-weight:500;
+}
+.categorias a:hover{
+ color:var(--red);
+}
+.categorias .col{
+ cursor:pointer;
+ transition:0.2s;
+}
+.categorias .col:hover{
+ transform:scale(1.05);
+}
+
+/* PRODUTOS */
+.card{
+ border:none;
+ transition:.3s;
+ margin-bottom:15px;
+}
+.card:hover{
+ box-shadow:0 8px 25px rgba(0,0,0,.15);
+}
+.card img{
+ height:220px;
+ object-fit:contain;
+ padding:10px;
+}
+.price{
+ color:var(--red);
+ font-size:1.2rem;
+ font-weight:bold;
+}
+.badge-frete{
+ background:#00a650;
+ font-size:0.8rem;
+}
+.btn-buy{
+ background:var(--red);
+ color:#fff;
+ font-weight:500;
+}
+.btn-buy:hover{
+ background:#c40010;
+}
+
+/* DIFERENCIAIS */
+.section-alt.text-center div.row div{
+ font-size:1rem;
+ font-weight:500;
+}
+
+/* BOTÃO TOPO */
+#btnTopo{
+ position:fixed;
+ bottom:25px;
+ right:25px;
+ width:45px;
+ height:45px;
+ border-radius:50%;
+ background:var(--red);
+ color:#fff;
+ border:none;
+ display:none;
+ z-index:999;
+}
+
+/* FOOTER */
+footer{
+ background:#fff;
+ border-top:1px solid #ddd;
+ padding-top:30px;
+ padding-bottom:20px;
+}
+footer a{
+ text-decoration:none;
+ color:#555;
+}
+footer a:hover{
+ color:var(--red);
+}
+</style>
+</head>
+
+<body id="inicio">
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top shadow">
+<div class="container-fluid px-4">
+<a class="navbar-brand" href="#inicio">LOJAS LM</a>
+<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+  <span class="navbar-toggler-icon"></span>
+</button>
+<div class="collapse navbar-collapse" id="navbarNav">
+<ul class="navbar-nav me-3">
+<li class="nav-item"><a class="nav-link" href="#compras">Compras</a></li>
+<li class="nav-item"><a class="nav-link" href="#quemSomos">Quem Somos</a></li>
+<li class="nav-item"><a class="nav-link" href="#parcerias">Parcerias</a></li>
+<li class="nav-item"><a class="nav-link" href="#localizacao">Localização</a></li>
+</ul>
+
+<form class="d-flex search-bar mx-auto">
+<input class="form-control" placeholder="Buscar produtos, marcas e muito mais">
+<button class="btn btn-dark"><i class="bi bi-search"></i></button>
+</form>
+
+<button class="btn btn-outline-light ms-3">
+<i class="bi bi-cart"></i>
+</button>
+</div>
+</div>
+</nav>
+
+<!-- BANNER PRINCIPAL -->
+<div id="carouselBanners" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="img/card1.jpeg" class="d-block w-100 banner-img">
+    </div>
+    <div class="carousel-item">
+      <img src="img/card2" class="d-block w-100 banner-img">
+    </div>
+    <div class="carousel-item">
+      <img src="img/card3" class="d-block w-100 banner-img">
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselBanners" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselBanners" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+  </button>
+</div>
+
+<!-- SEÇÃO DE PRODUTOS 1 --> 
+ <section id="compras" class="section py-5"> <div class="container"> 
+    <h2 class="text-center mb-4"><strong>Ofertas em destaque</strong></h2> <div class="row g-2"> 
+        
+         <div class="col-6 col-md-4 col-lg-3"> <div class="card h-100"> <img src="img/ip2.jpg" class="card-img-top"> <div class="card-body p-2"> <span class="badge badge-frete mb-1">Frete grátis</span> <p class="mb-1">iPhone 16</p> <div class="price">R$ 5.499,99</div> <button class="btn btn-buy w-100 mt-2">Comprar</button> </div> </div> </div> <div class="col-6 col-md-4 col-lg-3"> <div class="card h-100"> <img src="img/o.jpg" class="card-img-top"> <div class="card-body p-2"> <span class="badge badge-frete mb-1">Frete grátis</span> <p class="mb-1">Galaxy S24 Ultra</p> <div class="price">R$ 5.299,99</div> <button class="btn btn-buy w-100 mt-2">Comprar</button> </div> </div> </div> <div class="col-6 col-md-4 col-lg-3"> <div class="card h-100"> <img src="img/note2.jpg" class="card-img-top"> <div class="card-body p-2"> <p class="mb-1">Notebook Gamer</p> <div class="price">R$ 4.499,99</div> <button class="btn btn-buy w-100 mt-2">Comprar</button> </div> </div> </div> <div class="col-6 col-md-4 col-lg-3"> <div class="card h-100"> <img src="img/airfryer.jpg" class="card-img-top"> <div class="card-body p-2"> <p class="mb-1">Air Fryer Digital</p> <div class="price">R$ 699,99</div> <button class="btn btn-buy w-100 mt-2">Comprar</button> </div> </div> </div> </div> </div> </section> <!-- SEÇÃO DE PRODUTOS 2 --> <section class="section py-5"> <div class="container"> <h2 class="text-center mb-4"><strong>Mais ofertas imperdíveis</strong></h2> <div class="row g-2"> <div class="col-6 col-md-4 col-lg-3"> <div class="card h-100"> <img src="img/produto1.jpg" class="card-img-top"> <div class="card-body p-2"> <p class="mb-1">Produto 1</p> <div class="price">R$ 299,99</div> <button class="btn btn-buy w-100 mt-2">Comprar</button> </div> </div> </div> <div class="col-6 col-md-4 col-lg-3"> <div class="card h-100"> <img src="img/produto2.jpg" class="card-img-top"> <div class="card-body p-2"> <p class="mb-1">Produto 2</p> <div class="price">R$ 199,99</div> <button class="btn btn-buy w-100 mt-2">Comprar</button> </div> </div> </div> <div class="col-6 col-md-4 col-lg-3"> <div class="card h-100"> <img src="img/produto3.jpg" class="card-img-top"> <div class="card-body p-2"> <p class="mb-1">Produto 3</p> <div class="price">R$ 499,99</div> <button class="btn btn-buy w-100 mt-2">Comprar</button> </div> </div> </div> <div class="col-6 col-md-4 col-lg-3"> <div class="card h-100"> <img src="img/produto4.jpg" class="card-img-top"> <div class="card-body p-2"> <p class="mb-1">Produto 4</p> <div class="price">R$ 399,99</div> <button class="btn btn-buy w-100 mt-2">Comprar</button> </div> </div> </div> </div> </div> </section> <!-- SEÇÃO DE PRODUTOS 3 --> <section class="section-alt py-5"> <div class="container"> <h2 class="text-center mb-4"><strong>Últimos lançamentos</strong></h2> <div class="row g-2"> <div class="col-6 col-md-4 col-lg-3"> <div class="card h-100"> <img src="img/produto5.jpg" class="card-img-top"> <div class="card-body p-2"> <p class="mb-1">Produto 5</p> <div class="price">R$ 599,99</div> <button class="btn btn-buy w-100 mt-2">Comprar</button> </div> </div> </div> <div class="col-6 col-md-4 col-lg-3"> <div class="card h-100"> <img src="img/produto6.jpg" class="card-img-top"> <div class="card-body p-2"> <p class="mb-1">Produto 6</p> <div class="price">R$ 749,99</div> <button class="btn btn-buy w-100 mt-2">Comprar</button> </div> </div> </div> <div class="col-6 col-md-4 col-lg-3"> <div class="card h-100"> <img src="img/produto7.jpg" class="card-img-top"> <div class="card-body p-2"> <p class="mb-1">Produto 7</p> <div class="price">R$ 899,99</div> <button class="btn btn-buy w-100 mt-2">Comprar</button> </div> </div> </div> <div class="col-6 col-md-4 col-lg-3"> <div class="card h-100"> <img src="img/produto8.jpg" class="card-img-top"> <div class="card-body p-2"> <p class="mb-1">Produto 8</p> <div class="price">R$ 1.199,99</div> <button class="btn btn-buy w-100 mt-2">Comprar</button> </div> </div> </div> </div> </div> </section>
+
+<!-- DIFERENCIAIS -->
+<section class="section-alt text-center" style="position:relative; background:#fff;">
+  <div style="height:6px; background-color:#e60014; width:100%; margin-bottom:40px;"></div>
+  <div class="container">
+    <h1 class="mb-5"><strong>Por que comprar na Lojas LM?</strong></h1>
+    <div class="row g-5">
+      <div class="col-md-3" style="padding:20px;">
+        🚚 <br>
+        <strong style="font-size:1.3rem;">Entrega rápida</strong><br>
+        Receba seus produtos com agilidade, em qualquer lugar do Brasil.
+      </div>
+      <div class="col-md-3" style="padding:20px;">
+        🔒 <br>
+        <strong style="font-size:1.3rem;">Compra segura</strong><br>
+        Transações protegidas e confiáveis, com total segurança de dados.
+      </div>
+      <div class="col-md-3" style="padding:20px;">
+        💳 <br>
+        <strong style="font-size:1.3rem;">Parcelamento facilitado</strong><br>
+        Divida suas compras em várias parcelas sem burocracia.
+      </div>
+      <div class="col-md-3" style="padding:20px;">
+        📞 <br>
+        <strong style="font-size:1.3rem;">Atendimento 24h</strong><br>
+        Suporte pronto para ajudar a qualquer hora, todos os dias.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- QUEM SOMOS -->
+<section id="quemSomos" class="section text-center" style="background:#fff;">
+  <div style="height:6px; background-color:#e60014; width:100%; margin-bottom:40px;"></div>
+  <div class="container">
+    <h1 class="mb-4"><strong>Quem Somos?</strong></h1>
+    <p class="lead" style="font-size:1.3rem;">
+    Lojas LM, vendemos de tudo para você, porque acreditamos que cada pessoa merece praticidade, qualidade e variedade em um só lugar. Nossa loja foi criada para facilitar a sua vida, reunindo produtos que atendem às necessidades do dia a dia, momentos especiais e surpresas inesperadas.
+
+Mais do que oferecer itens, buscamos entregar experiências de compra simples, rápidas e confiáveis. Cada escolha na LM é pensada para trazer comodidade, confiança e satisfação, fazendo com que nossos clientes encontrem exatamente o que precisam, quando precisam.
+
+Nosso compromisso vai além da venda, queremos ser parceiros da sua rotina, oferecendo soluções que tornam o seu dia a dia mais fácil, completo e agradável.
+
+Na LM, você encontra tudo o que procura, em um só lugar, com atendimento próximo e atenção aos detalhes.
+    </p>
+    <p style="font-size:1.4rem;">
+      LM – a loja que acompanha a sua vida.    
+    </p>
+  </div>
+</section>
+
+<!-- PARCERIAS -->
+<section id="parcerias" class="section text-center" style="background:#fff;">
+  <div style="height:6px; background-color:#e60014; width:100%; margin-bottom:40px;"></div>
+  <div class="container">
+    <h1 class="mb-4" ><strong>Parcerias</strong></h1>
+    <p class="lead" style="font-size:1.3rem;">Venda seus produtos em nossa plataforma e aumente sua visibilidade</p>
+    <div class="row mt-4 justify-content-center">
+      <div class="col-md-3 m-3 p-4" style="border:1px solid #e60014; border-radius:10px; font-size:1.3rem;">
+        📦 <strong>Logística integrada</strong><br>Envie seus produtos com facilidade usando nosso sistema de entrega.
+      </div>
+      <div class="col-md-3 m-3 p-4" style="border:1px solid #e60014; border-radius:10px; font-size:1.3rem;">
+        💰 <strong>Pagamentos rápidos</strong><br>Receba suas vendas de forma ágil e segura.
+      </div>
+      <div class="col-md-3 m-3 p-4" style="border:1px solid #e60014; border-radius:10px; font-size:1.3rem;">
+        📈 <strong>Visibilidade nacional</strong><br>Alcance clientes em todo o Brasil com nossa plataforma.
+      </div>
+    </div>
+    <button class="btn btn-buy mt-5 px-5" data-bs-toggle="modal" data-bs-target="#modalParceiro">
+      <h5>Quero ser parceiro</h5>
+    </button>
+  </div>
+</section>
+
+<!-- MODAL PARA CADASTRO DE PARCEIRO -->
+<div class="modal fade" id="modalParceiro" tabindex="-1" aria-labelledby="modalParceiroLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header" style="background:#e60014; color:white;">
+        <h5 class="modal-title" id="modalParceiroLabel">Cadastro de Parceiro</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Fechar"></button>
+      </div>
+      <div class="modal-body">
+        <form id="formParceiro">
+          <div class="mb-3">
+            <label for="nomeParceiro" class="form-label">Nome</label>
+            <input type="text" class="form-control" id="nomeParceiro" required>
+          </div>
+          <div class="mb-3">
+            <label for="emailParceiro" class="form-label">E-mail</label>
+            <input type="email" class="form-control" id="emailParceiro" required>
+          </div>
+          <div class="mb-3">
+            <label for="telefoneParceiro" class="form-label">Telefone</label>
+            <input type="tel" class="form-control" id="telefoneParceiro" required>
+          </div>
+          <div class="mb-3">
+            <label for="mensagemParceiro" class="form-label">Mensagem</label>
+            <textarea class="form-control" id="mensagemParceiro" rows="3" style="resize:none;"></textarea>
+          </div>
+          <button type="submit" class="btn btn-buy w-100">Enviar</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- BOTÃO WHATSAPP FIXO NO CANTO ESQUERDO -->
+<a href="https://wa.me/5532988621242" target="_blank" 
+   style="position:fixed; bottom:25px; left:25px; background:#25D366; color:white; border-radius:50%; width:60px; height:60px; display:flex; align-items:center; justify-content:center; font-size:28px; z-index:9999; box-shadow:0 4px 10px rgba(0,0,0,0.2);">
+  <i class="bi bi-whatsapp"></i>
+</a>
+
+<!-- LOCALIZAÇÃO -->
+<section id="localizacao" class="section text-center">
+  <div style="height:6px; background-color:#e60014; width:100%; margin-bottom:40px;"></div>
+  <div class="container">
+    <h1 class="mb-4"><strong>Localização</strong></h1>
+    <p style="font-size:1.3rem;">
+         Nossa sede está localizada em Muriaé, MG. Venha nos visitar!    
+    </p>
+    <div class="ratio ratio-16x9 mt-4">
+      <iframe src="https://www.google.com/maps?q=São%20Paulo&output=embed"></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+
+  <p class="text-center small">© 2026 Lojas LM — Projeto educacional inspirado em Lojas Americanas.</p>
+</footer>
+
+<!-- BOTÃO TOPO -->
+<button id="btnTopo" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+<i class="bi bi-arrow-up"></i>
+</button>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+window.addEventListener("scroll",()=> {
+ document.getElementById("btnTopo").style.display =
+ window.scrollY>300?"block":"none";
+});
+
+// Submissão do formulário do parceiro
+document.getElementById("formParceiro").addEventListener("submit", function(e){
+  e.preventDefault();
+  alert("Obrigado! Sua solicitação de parceria foi enviada com sucesso.");
+  var modalEl = document.getElementById('modalParceiro');
+  var modal = bootstrap.Modal.getInstance(modalEl);
+  modal.hide();
+  this.reset();
+});
+</script>
+
+</body>
+</html>
